@@ -1,0 +1,41 @@
+HOJA DE REFERENCIA | PRUEBA 2 DE DESPLIEGUE WEB
+
+Lo escrito entre < > indica un dato que tienes que completar.
+Quita los signos < > al escribir el valor. Usa sudo si lo necesitas.
+
+RED | APP Y CLIENTE
+  ip -br -4 address                   Ver las IPv4 y sus interfaces.
+  ip route                            Ver las rutas de la máquina.
+  ip route get <IP_DESTINO>            Ver qué interfaz utilizaría.
+
+IMÁGENES Y COMPOSE | APP
+  FROM <IMAGEN_BASE>                  Elegir la imagen de partida.
+  COPY <ORIGEN> <DESTINO>             Copiar archivos a la imagen.
+  docker image ls                     Ver las imágenes y sus etiquetas.
+  docker compose config               Revisar la configuración resultante.
+  docker compose build <SERVICIO>      Construir la imagen del servicio.
+  docker compose up -d <SERVICIO>      Crear o actualizar el servicio.
+  docker compose ps                   Ver servicios, estado y puertos.
+  docker compose port <SERVICIO> <PUERTO_INTERNO>
+                                      Consultar dónde se publicó ese puerto.
+  docker inspect <CONTENEDOR>          Consultar su imagen y configuración.
+  docker compose logs <SERVICIO>       Leer los mensajes del servicio.
+  docker compose exec <SERVICIO> sh    Abrir una terminal dentro del contenedor.
+  ls -l <DIRECTORIO>                   Comprobar qué archivos hay en una ruta.
+  find <DIRECTORIO> -name '<ARCHIVO>'   Localizar un archivo por nombre.
+
+CONSULTAS DNS Y RESOLUTOR | CLIENTE
+  dig @<IP_DNS> <NOMBRE> A             Consultar directamente al DNS indicado.
+  getent ahostsv4 <NOMBRE>             Comprobar la resolución del sistema.
+  resolvectl status                   Ver la configuración DNS activa.
+
+  Si CLIENTE usa systemd-resolved:
+  resolvectl dns <INTERFAZ> <IP_DNS>    Indicar un servidor para la interfaz.
+  resolvectl domain <INTERFAZ> '~<ZONA>'
+                                      Enviar al DNS del enlace las consultas
+                                      de esa zona. El signo ~ forma parte
+                                      de esa sintaxis.
+
+PETICIONES HTTP | DESDE LA MÁQUINA QUE ESTÉS COMPROBANDO
+  curl -i --max-time <SEGUNDOS> <URL>   Ver cabeceras y cuerpo de la respuesta.
+  curl -v <URL>                       Ver información de conexión y petición.

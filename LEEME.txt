@@ -1,0 +1,20 @@
+PRUEBA 2 DE DESPLIEGUE WEB · ARCHIVOS DE PARTIDA
+
+Trabaja en la máquina APLICACIÓN. Descomprime en una carpeta nueva para no
+mezclar archivos con los de la prueba anterior. Consulta el enunciado.
+
+despliegue/ es el proyecto de los apartados 1 a 4.
+Completa los valores de build e image antes de construir y añade la
+publicación del puerto antes de arrancar el servicio web.
+incidencia/ es el proyecto independiente del apartado 5. Puedes empezarlo
+aunque no hayas terminado el primero. Está preparado para arrancar tal como
+se entrega, después de configurar su .env.
+
+En cada carpeta:
+  cp .env.example .env
+En despliegue/, indica tu puesto y la IP de APP en .env. En incidencia/,
+indica solo tu puesto y deja los demás valores tal como están para el
+primer arranque. El .env es un archivo oculto: ls -a permite verlo.
+
+Consulta Hoja_referencia.txt para ver la sintaxis de los comandos.
+El servicio principal se llama web. El de la incidencia se llama estado.

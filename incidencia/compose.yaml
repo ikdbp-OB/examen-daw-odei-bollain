@@ -1,0 +1,9 @@
+name: prueba2-incidencia-${ALUMNO}
+services:
+  estado:
+    build: .
+    image: rec-incidencia-${ALUMNO}:1.0
+    ports:
+      - target: ${PUERTO_INTERNO}
+        published: "${PUERTO_PUBLICADO}"
+        host_ip: "${IP_PUBLICACION}"
